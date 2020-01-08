@@ -8,19 +8,6 @@ namespace R365_Calc_Test
     public class CalculatorTest
     {
         [TestMethod]
-        public void ThrowsErrorWithMoreThan2Numbers()
-        {
-            string message = "";
-            try
-            {
-                int result = Calculator.Calculate("1,2,3");
-            } catch (Exception e) {
-                message = e.Message;
-            }
-            Assert.AreEqual(message, "Max of 2 numbers exceeded");
-        }
-
-        [TestMethod]
         public void WorksWith1Number()
         {
             int result = Calculator.Calculate("20");
@@ -32,6 +19,13 @@ namespace R365_Calc_Test
         {
             int result = Calculator.Calculate("1,5000");
             Assert.AreEqual(result, 5001);
+        }
+
+        [TestMethod]
+        public void WorksWithMoreThan2Numbers()
+        {
+            int result = Calculator.Calculate("1,2,3,4,5,6,7,8,9,10,11,12");
+            Assert.AreEqual(result, 78);
         }
 
         [TestMethod]

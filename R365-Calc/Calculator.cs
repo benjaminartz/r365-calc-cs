@@ -20,11 +20,6 @@ namespace R365_Calc
             string[] nums = input.Split(",");
             int result = 0;
 
-            if (nums.Length > 2)
-            {
-                throw new Exception("Max of 2 numbers exceeded");
-            }
-
             foreach (string numStr in nums)
             {
                 int num = 0;
