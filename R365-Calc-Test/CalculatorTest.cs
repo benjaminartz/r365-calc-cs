@@ -77,5 +77,14 @@ namespace R365_Calc_Test
             int result = Calculator.Calculate("1\r\n2,3");
             Assert.AreEqual(result, 6);
         }
+
+        [TestMethod]
+        public void SupportsCustomDelimeters()
+        {
+            int result = Calculator.Calculate("//#\n2#5");
+            Assert.AreEqual(result, 7);
+            result = Calculator.Calculate("//,\n2,ff,100");
+            Assert.AreEqual(result, 102);
+        }
     }
 }

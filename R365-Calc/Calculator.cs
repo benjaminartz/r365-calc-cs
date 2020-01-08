@@ -24,7 +24,13 @@ namespace R365_Calc
 
         public static int Calculate(string input)
         {
-            string[] nums = Regex.Split(input, @",|\n|\r\n");
+            string delimeter = @",|\n|\r\n";
+            if (input.StartsWith("//"))
+            {
+                delimeter = input.Substring(2, 1);
+                input = input.Substring(4);
+            }
+            string[] nums = Regex.Split(input, delimeter);
             int result = 0;
             List<int> negatives = new List<int>();
 
