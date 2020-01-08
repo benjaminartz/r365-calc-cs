@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace R365_Calc
 {
@@ -8,8 +9,13 @@ namespace R365_Calc
         {
             while (true)
             {
-                Console.WriteLine("Enter a thing: ");
-                string input = Console.ReadLine();
+                Console.WriteLine("Enter a thing: (Press Enter TWICE when done)");
+                string input = "";
+                string line;
+                do {
+                    line = Console.ReadLine();
+                    input += line + "\n";
+                } while (line != "");
                 int output = Calculate(input);
                 Console.WriteLine("Result:" + output);
             }
@@ -17,7 +23,7 @@ namespace R365_Calc
 
         public static int Calculate(string input)
         {
-            string[] nums = input.Split(",");
+            string[] nums = Regex.Split(input, @",|\n|\r\n");
             int result = 0;
 
             foreach (string numStr in nums)

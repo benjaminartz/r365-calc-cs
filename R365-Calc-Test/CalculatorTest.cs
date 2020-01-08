@@ -48,5 +48,19 @@ namespace R365_Calc_Test
             int result = Calculator.Calculate("5,tytyt");
             Assert.AreEqual(result, 5);
         }
+
+        [TestMethod]
+        public void SupportsUnixNewlineAsAnAlternateDelimeter()
+        {
+            int result = Calculator.Calculate("1\n2,3");
+            Assert.AreEqual(result, 6);
+        }
+
+        [TestMethod]
+        public void SupportsWindowsNewlineAsAnAlternateDelimeter()
+        {
+            int result = Calculator.Calculate("1\r\n2,3");
+            Assert.AreEqual(result, 6);
+        }
     }
 }
