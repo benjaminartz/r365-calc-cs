@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace R365_Calc
 {
@@ -25,6 +26,7 @@ namespace R365_Calc
         {
             string[] nums = Regex.Split(input, @",|\n|\r\n");
             int result = 0;
+            List<int> negatives = new List<int>();
 
             foreach (string numStr in nums)
             {
@@ -33,8 +35,17 @@ namespace R365_Calc
                 {
                     num = System.Convert.ToInt32(numStr);
                 } catch (FormatException) { }
-
+                
+                if (num < 0)
+                {
+                    negatives.Add(num);
+                }
                 result += num;
+            }
+
+            if (negatives.Count > 0)
+            {
+                throw new Exception("Negative numbers are not allowed: [" + String.Join(",", negatives.ToArray()) + "]");
             }
 
             return result;

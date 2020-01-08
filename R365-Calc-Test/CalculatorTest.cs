@@ -29,10 +29,17 @@ namespace R365_Calc_Test
         }
 
         [TestMethod]
-        public void WorksWithNegativeNumbers()
+        public void ErrorsWithNegativeNumbersShowingNegatives()
         {
-            int result = Calculator.Calculate("4,-3");
-            Assert.AreEqual(result, 1);
+            string message = "";
+            try
+            {
+               Calculator.Calculate("4,-3,5,-2");
+            } catch (Exception e)
+            {
+                message = e.Message;
+            }
+            StringAssert.Contains(message, "[-3,-2]");
         }
 
         [TestMethod]
