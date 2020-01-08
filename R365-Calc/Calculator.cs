@@ -40,6 +40,9 @@ namespace R365_Calc
                 {
                     negatives.Add(num);
                 }
+
+                num = num > 1000 ? 0 : num;
+
                 result += num;
             }
 

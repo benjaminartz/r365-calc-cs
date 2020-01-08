@@ -17,9 +17,17 @@ namespace R365_Calc_Test
         [TestMethod]
         public void WorksWith2Numbers()
         {
-            int result = Calculator.Calculate("1,5000");
-            Assert.AreEqual(result, 5001);
+            int result = Calculator.Calculate("1,5");
+            Assert.AreEqual(result, 6);
         }
+
+        [TestMethod]
+        public void ShouldTreatNumbersGreaterThan1000AsInvalid()
+        {
+            int result = Calculator.Calculate("2,1001,6");
+            Assert.AreEqual(result, 8);
+        }
+
 
         [TestMethod]
         public void WorksWithMoreThan2Numbers()
