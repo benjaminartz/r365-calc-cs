@@ -79,12 +79,19 @@ namespace R365_Calc_Test
         }
 
         [TestMethod]
-        public void SupportsCustomDelimeters()
+        public void SupportsACustom1CharacterDelimeter()
         {
             int result = Calculator.Calculate("//#\n2#5");
             Assert.AreEqual(result, 7);
             result = Calculator.Calculate("//,\n2,ff,100");
             Assert.AreEqual(result, 102);
+        }
+
+        [TestMethod]
+        public void SupportsACustomDelimeterOfAnyLength()
+        {
+            int result = Calculator.Calculate("//[***]\n11***22***33");
+            Assert.AreEqual(result, 66);
         }
     }
 }
