@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R365-Calc", "R365-Calc\R365-Calc.csproj", "{4DC09E2A-C35F-40CC-AA91-45099412D109}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R365-Calc-Test", "R365-Calc-Test\R365-Calc-Test.csproj", "{C7769723-9AAD-460A-8258-14405AC40C16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DC09E2A-C35F-40CC-AA91-45099412D109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC09E2A-C35F-40CC-AA91-45099412D109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC09E2A-C35F-40CC-AA91-45099412D109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC09E2A-C35F-40CC-AA91-45099412D109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7769723-9AAD-460A-8258-14405AC40C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7769723-9AAD-460A-8258-14405AC40C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7769723-9AAD-460A-8258-14405AC40C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7769723-9AAD-460A-8258-14405AC40C16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDD93C60-4558-4F13-8409-5B32012B1A66}
+	EndGlobalSection
+EndGlobal
