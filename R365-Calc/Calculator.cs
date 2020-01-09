@@ -25,21 +25,24 @@ namespace R365_Calc
         public static int Calculate(string input)
         {
             string delimeter = @",|\n|\r\n";
-            bool customDelimeter = false;
 
             if (input.StartsWith("//["))
             {
                 int len = input.IndexOf("]\n") - 3;
-                delimeter = input.Substring(3, len);
+                string delimString = input.Substring(3, len);
+                string[] delims = delimString.Split("][");
+                for (int i = 0; i < delims.Length; i++)
+                {
+                    delims[i] = Regex.Escape(delims[i]);
+                }
+                delimeter = String.Join("|", delims);
                 input = input.Substring(len + 4);
-                customDelimeter = true;
             } else if (input.StartsWith("//"))
             {
-                delimeter = input.Substring(2, 1);
+                delimeter = Regex.Escape(input.Substring(2, 1));
                 input = input.Substring(4);
-                customDelimeter = true;
             }
-            string[] nums = customDelimeter ? input.Split(delimeter) : Regex.Split(input, delimeter);
+            string[] nums = Regex.Split(input, delimeter);
             int result = 0;
             List<int> negatives = new List<int>();
 

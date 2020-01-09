@@ -93,5 +93,12 @@ namespace R365_Calc_Test
             int result = Calculator.Calculate("//[***]\n11***22***33");
             Assert.AreEqual(result, 66);
         }
+
+        [TestMethod]
+        public void SupportsMultipleCustomDelimetersOfAnyLength()
+        {
+            int result = Calculator.Calculate("//[*][!!][r9r]\n11r9r22*hh*33!!44");
+            Assert.AreEqual(result, 110);
+        }
     }
 }
